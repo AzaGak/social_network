@@ -1,17 +1,58 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// import store from "./redax/store";
+import store from "./redax/redux-store";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { Provider } from "react-redux";
+// import state, { suscribe } from "./redax/state";
+
+// import {
+//     addPost,
+//     addMessage,
+//     updateNewPostText,
+//     updateNewMessageText,
+// } from "./redax/state";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <React.StrictMode>
+        <BrowserRouter>
+            <Provider store={store}>
+                <App />
+            </Provider>
+        </BrowserRouter>
+    </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// const renderEntireTree = (state) => {
+//     root.render(
+//         <React.StrictMode>
+//             <BrowserRouter>
+//                 <Provider store={store}>
+//                     <App
+//                     // state={state}
+//                     // dispatch={store.dispatch.bind(store)}
+//                     // store={store}
+
+//                     // addPost={store.addPost.bind(store)}
+//                     // addMessage={store.addMessage.bind(store)}
+//                     // updateNewPostText={store.updateNewPostText.bind(store)}
+//                     // updateNewMessageText={store.updateNewMessageText.bind(store)}
+//                     />
+//                 </Provider>
+//             </BrowserRouter>
+//         </React.StrictMode>
+//     );
+// };
+
+// renderEntireTree(store.getState());
+// // store.subscribe(renderEntireTree);
+
+// store.subscribe(() => {
+//     let state = store.getState();
+//     renderEntireTree(state);
+// });

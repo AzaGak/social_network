@@ -1,0 +1,45 @@
+.my_post {
+    margin-left: 10px;
+}
+
+.new_post {
+    margin-bottom: 20px;
+}
+
+.new_post textarea {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+    outline: 0;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.new_post textarea:focus {
+    box-shadow: 2px 2px 5px rgba(120, 177, 120, 0.5);
+}
+
+.new_post button {
+    float: right;
+    background: rgb(120, 177, 120);
+    padding: 7px 20px;
+    border: none;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.new_post button:hover {
+    opacity: 0.9;
+}
+
+.new_post button:active {
+    transform: translateY(2px);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}

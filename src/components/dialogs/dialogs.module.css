@@ -1,0 +1,55 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    padding: 20px;
+}
+
+.dialogs_items {
+    font-weight: 600;
+}
+
+.dialogs_items div {
+    margin-bottom: 10px;
+}
+
+.messages {
+    padding: 20px;
+}
+
+.new_message textarea {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+    outline: 0;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.new_message textarea:focus {
+    box-shadow: 2px 2px 5px rgba(120, 177, 120, 0.5);
+}
+
+.new_message button {
+    float: right;
+    background: rgb(120, 177, 120);
+    padding: 7px 20px;
+    border: none;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.new_message button:hover {
+    opacity: 0.9;
+}
+
+.new_message button:active {
+    transform: translateY(2px);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}

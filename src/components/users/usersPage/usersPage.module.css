@@ -1,0 +1,11 @@
+span {
+    margin-left: 10px;
+    cursor: pointer;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+.selPage {
+    font-weight: 700;
+    color: rgb(120, 177, 120);
+}

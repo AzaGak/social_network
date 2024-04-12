@@ -1,0 +1,15 @@
+.friend_name_wrapper {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.friend_avatar img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.friend_avatar {
+    text-align: center;
+}
