@@ -7,7 +7,7 @@ const Profile = (props) => {
 
     return (
         <main>
-            <ProfileInfo />
+            <ProfileInfo profile={props.profile} />
             {/* <MyPosts
                 postData={postData}
                 newPostText={newPostText}

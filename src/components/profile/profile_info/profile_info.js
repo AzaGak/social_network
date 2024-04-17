@@ -1,6 +1,7 @@
 import cls from "./profile_info.module.css"; // Подключение модулем, в cls лежит объект ключи которого соответвует классом в файле profile.module.css а значение сгенирированны автоматический react
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+    console.log(props);
     return (
         <div>
             <div className={cls.profile_background}>
@@ -13,17 +14,42 @@ const ProfileInfo = () => {
             <div className={cls.profile_info}>
                 <div className={cls.avatar}>
                     <img
-                        src="https://cc-prod.scene7.com/is/image/CCProdAuthor/adobe-firefly-marquee-text-to-image-0-desktop-1000x1000?$pjpeg$&jpegSize=300&wid=1000"
+                        src={
+                            !props.profile
+                                ? "https://cc-prod.scene7.com/is/image/CCProdAuthor/adobe-firefly-marquee-text-to-image-0-desktop-1000x1000?$pjpeg$&jpegSize=300&wid=1000"
+                                : props.profile.photos.small
+                        }
                         alt="avatar"
                     />
                 </div>
                 <div className={cls.profile_data}>
-                    <div className={cls.profile_name}>Snoop Dog!!!</div>
+                    <div className={cls.profile_name}>
+                        {!props.profile
+                            ? "Snoop Dog!!!"
+                            : props.profile.fullName}
+                    </div>
                     <div className={cls.profile_list}>
                         <ul>
-                            <li>Date of Birth: 2 Junuary</li>
-                            <li>City: Minsk</li>
-                            <li>Education: BSU`11</li>
+                            <li>
+                                Ищу работу:{" "}
+                                {!props.profile
+                                    ? "Нет иформации"
+                                    : props.profile.lookingForAJob
+                                    ? "ДА"
+                                    : "НЕТ"}
+                            </li>
+                            <li>
+                                Описание поиска работы:{" "}
+                                {!props.profile
+                                    ? "Нет информации"
+                                    : props.profile.lookingForAJobDescription}
+                            </li>
+                            <li>
+                                About me:{" "}
+                                {!props.profile
+                                    ? "Нет информации"
+                                    : props.profile.aboutMe}
+                            </li>
                         </ul>
                     </div>
                 </div>

@@ -1,14 +1,17 @@
+import { NavLink } from "react-router-dom";
 import cls from "./usersItem.module.css";
 const UsersItem = (props) => {
     return (
         <div className={cls.user_wrapper_items} key={props.id}>
             <div className={cls.avatar_wrapper}>
                 <div className={cls.avatar}>
-                    <img
-                        className={cls.name_avatar}
-                        src={props.photoUrl}
-                        alt=""
-                    />
+                    <NavLink to={`/profile/${props.id}`}>
+                        <img
+                            className={cls.name_avatar}
+                            src={props.photoUrl}
+                            alt=""
+                        />
+                    </NavLink>
                 </div>
                 <div className={cls.btn_wrapper}>
                     {props.followed ? (

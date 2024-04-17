@@ -2,7 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import Header from "./components/header/header";
-import Profile from "./components/profile/profile";
+// import Profile from "./components/profile/profile";
+import ProfileContainer from "./components/profile/profile-container";
 import Nav from "./components/nav/nav";
 // import Dialogs from "./components/dialogs/dialogs";
 import News from "./components/news/news";
@@ -46,9 +47,9 @@ const App = (props) => {
             <div className="app-wrapper-main">
                 <Routes>
                     <Route
-                        path="/profile"
+                        path="/profile/*"
                         element={
-                            <Profile
+                            <ProfileContainer
                             // postData={postData}
                             // state={profilePage}
                             // dispatch={props.dispatch}

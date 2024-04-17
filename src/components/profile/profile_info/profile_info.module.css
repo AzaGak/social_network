@@ -29,6 +29,14 @@
     padding: 0;
 }
 
+.profile_list ul li {
+    margin-bottom: 3px;
+}
+
+.profile_list ul li:last-child {
+    margin-bottom: 0;
+}
+
 .profile_name {
     margin-bottom: 10px;
     font-weight: 900;
