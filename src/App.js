@@ -47,7 +47,7 @@ const App = (props) => {
             <div className="app-wrapper-main">
                 <Routes>
                     <Route
-                        path="/profile/*"
+                        path="/profile/:userId?"
                         element={
                             <ProfileContainer
                             // postData={postData}
