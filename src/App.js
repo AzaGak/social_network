@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Header from "./components/header/header";
+// import Header from "./components/header/header";
 // import Profile from "./components/profile/profile";
 import ProfileContainer from "./components/profile/profile-container";
 import Nav from "./components/nav/nav";
@@ -11,6 +11,7 @@ import Music from "./components/music/music";
 import Settings from "./components/settings/settings";
 import DialogsContainer from "./components/dialogs/dialogs-container";
 import UsersContainer from "./components/users/users-container";
+import HeaderContainer from "./components/header/header-container";
 
 // import Friends from "./components/friends/friends";
 
@@ -40,7 +41,7 @@ const App = (props) => {
 
     return (
         <div className="app-wrapper">
-            <Header />
+            <HeaderContainer />
             <Nav
             // state={messagePage}
             />

@@ -3,14 +3,22 @@
     background: rgb(120, 177, 120);
     display: flex;
     align-items: center;
+    justify-content: space-between;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+    padding: 0 20px;
 }
 
 .header .logo {
     width: 43px;
     height: 43px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     border-radius: 50%;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.log_link {
+    text-decoration: none;
+    color: #012f58ba;
+    font-weight: 600;
 }
