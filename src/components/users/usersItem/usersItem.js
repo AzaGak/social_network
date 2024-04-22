@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 import cls from "./usersItem.module.css";
 const UsersItem = (props) => {
     return (
@@ -18,7 +19,22 @@ const UsersItem = (props) => {
                         <button
                             className={cls.btn}
                             onClick={() => {
-                                props.unfollow(props.id);
+                                axios
+                                    .delete(
+                                        `https://social-network.samuraijs.com/api/1.0/follow/${props.id}`,
+                                        {
+                                            withCredentials: true,
+                                            headers: {
+                                                "API-KEY":
+                                                    "825f065c-32a8-4f91-beea-7deb70104ba2",
+                                            },
+                                        }
+                                    )
+                                    .then((responce) => {
+                                        if (responce.data.resultCode === 0) {
+                                            props.unfollow(props.id);
+                                        }
+                                    });
                             }}
                         >
                             Follow
@@ -27,7 +43,23 @@ const UsersItem = (props) => {
                         <button
                             className={cls.btn}
                             onClick={() => {
-                                props.follow(props.id);
+                                axios
+                                    .post(
+                                        `https://social-network.samuraijs.com/api/1.0/follow/${props.id}`,
+                                        {},
+                                        {
+                                            withCredentials: true,
+                                            headers: {
+                                                "API-KEY":
+                                                    "825f065c-32a8-4f91-beea-7deb70104ba2",
+                                            },
+                                        }
+                                    )
+                                    .then((responce) => {
+                                        if (responce.data.resultCode === 0) {
+                                            props.follow(props.id);
+                                        }
+                                    });
                             }}
                         >
                             Unfollow
