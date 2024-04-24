@@ -17,14 +17,22 @@ const UsersItem = (props) => {
                 <div className={cls.btn_wrapper}>
                     {props.followed ? (
                         <button
+                            disabled={props.followingInProgress.some(
+                                (id) => id === props.id
+                            )}
                             className={cls.btn}
                             onClick={() => {
+                                props.toggleFollowingProgress(true, props.id);
                                 followUnfollowAPI
                                     .setUnfollow(props.id)
                                     .then((data) => {
                                         if (data.resultCode === 0) {
                                             props.unfollow(props.id);
                                         }
+                                        props.toggleFollowingProgress(
+                                            false,
+                                            props.id
+                                        );
                                     });
                             }}
                         >
@@ -32,14 +40,22 @@ const UsersItem = (props) => {
                         </button>
                     ) : (
                         <button
+                            disabled={props.followingInProgress.some(
+                                (id) => id === props.id
+                            )}
                             className={cls.btn}
                             onClick={() => {
+                                props.toggleFollowingProgress(true, props.id);
                                 followUnfollowAPI
                                     .setFollow(props.id)
                                     .then((data) => {
                                         if (data.resultCode === 0) {
                                             props.follow(props.id);
                                         }
+                                        props.toggleFollowingProgress(
+                                            false,
+                                            props.id
+                                        );
                                     });
                             }}
                         >

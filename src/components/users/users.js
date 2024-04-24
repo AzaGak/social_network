@@ -36,6 +36,8 @@ const Users = (props) => {
             key={user.id}
             fullName={user.name}
             status={user.status}
+            toggleFollowingProgress={props.toggleFollowingProgress}
+            followingInProgress={props.followingInProgress}
         />
     ));
     return (
