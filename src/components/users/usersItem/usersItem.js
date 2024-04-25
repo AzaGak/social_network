@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import cls from "./usersItem.module.css";
-import { followUnfollowAPI } from "../../../api/api";
 const UsersItem = (props) => {
     return (
         <div className={cls.user_wrapper_items} key={props.id}>
@@ -22,18 +21,7 @@ const UsersItem = (props) => {
                             )}
                             className={cls.btn}
                             onClick={() => {
-                                props.toggleFollowingProgress(true, props.id);
-                                followUnfollowAPI
-                                    .setUnfollow(props.id)
-                                    .then((data) => {
-                                        if (data.resultCode === 0) {
-                                            props.unfollow(props.id);
-                                        }
-                                        props.toggleFollowingProgress(
-                                            false,
-                                            props.id
-                                        );
-                                    });
+                                props.toggleFollowing(props.id);
                             }}
                         >
                             Follow
@@ -45,18 +33,7 @@ const UsersItem = (props) => {
                             )}
                             className={cls.btn}
                             onClick={() => {
-                                props.toggleFollowingProgress(true, props.id);
-                                followUnfollowAPI
-                                    .setFollow(props.id)
-                                    .then((data) => {
-                                        if (data.resultCode === 0) {
-                                            props.follow(props.id);
-                                        }
-                                        props.toggleFollowingProgress(
-                                            false,
-                                            props.id
-                                        );
-                                    });
+                                props.toggleUnfollowing(props.id);
                             }}
                         >
                             Unfollow

@@ -36,14 +36,14 @@ const Users = (props) => {
             key={user.id}
             fullName={user.name}
             status={user.status}
-            toggleFollowingProgress={props.toggleFollowingProgress}
             followingInProgress={props.followingInProgress}
+            toggleFollowing={props.toggleFollowing}
+            toggleUnfollowing={props.toggleUnfollowing}
         />
     ));
     return (
         <div className={cls.users}>
             <div className={cls.pagWrap}>{newArrayPages}</div>
-            {/* <button onClick={this.getUsers}>Get Users</button> */}
             {newArrayUsers}
         </div>
     );
