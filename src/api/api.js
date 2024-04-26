@@ -15,6 +15,12 @@ const userAPI = {
             .then((responce) => responce.data);
     },
 
+    getProfile(userId) {
+        return instance
+            .get(`profile/${userId}`)
+            .then((responce) => responce.data);
+    },
+
     setUnfollow(id) {
         return instance
             .delete(`follow/${id}`)
