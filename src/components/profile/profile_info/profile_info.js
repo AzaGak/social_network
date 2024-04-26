@@ -1,5 +1,8 @@
 import cls from "./profile_info.module.css"; // Подключение модулем, в cls лежит объект ключи которого соответвует классом в файле profile.module.css а значение сгенирированны автоматический react
 
+const avatarSrc =
+    "https://cc-prod.scene7.com/is/image/CCProdAuthor/adobe-firefly-marquee-text-to-image-0-desktop-1000x1000?$pjpeg$&jpegSize=300&wid=1000";
+
 const ProfileInfo = (props) => {
     console.log(props);
     return (
@@ -15,9 +18,9 @@ const ProfileInfo = (props) => {
                 <div className={cls.avatar}>
                     <img
                         src={
-                            !props.profile
-                                ? "https://cc-prod.scene7.com/is/image/CCProdAuthor/adobe-firefly-marquee-text-to-image-0-desktop-1000x1000?$pjpeg$&jpegSize=300&wid=1000"
-                                : props.profile.photos.small
+                            props.profile.photos.small != null
+                                ? props.profile.photos.small
+                                : avatarSrc
                         }
                         alt="avatar"
                     />

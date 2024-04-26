@@ -9,7 +9,7 @@ const UsersItem = (props) => {
                         <img
                             className={cls.name_avatar}
                             src={props.photoUrl}
-                            alt=""
+                            alt="user-avatar"
                         />
                     </NavLink>
                 </div>
