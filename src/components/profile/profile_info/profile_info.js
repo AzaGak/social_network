@@ -18,9 +18,9 @@ const ProfileInfo = (props) => {
                 <div className={cls.avatar}>
                     <img
                         src={
-                            props.profile != null
-                                ? props.profile.photos.small
-                                : avatarSrc
+                            props.profile === null
+                                ? avatarSrc
+                                : props.profile.photos.small
                         }
                         alt="avatar"
                     />
