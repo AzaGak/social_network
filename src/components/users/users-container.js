@@ -10,6 +10,7 @@ import {
     toggleFollowing,
     toggleUnfollowing,
 } from "../../redax/users-reducer";
+import withAuthRedirect from "../../hoc/withAuthRedirect";
 
 class UsersAPIComponent extends React.Component {
     componentDidMount() {
@@ -96,6 +97,8 @@ const mapStateToProps = (state) => {
 //     };
 // };
 
+const AuthRedirectContainer = withAuthRedirect(UsersAPIComponent);
+
 const UsersContainer = connect(mapStateToProps, {
     follow,
     unfollow,
@@ -103,6 +106,6 @@ const UsersContainer = connect(mapStateToProps, {
     getUsersThunkCreator,
     toggleFollowing,
     toggleUnfollowing,
-})(UsersAPIComponent);
+})(AuthRedirectContainer);
 
 export default UsersContainer;
