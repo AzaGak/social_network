@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 import Profile from "./profile";
 import { profileThunk } from "../../redax/profile-reducer";
-import withAuthRedirect from "../../hoc/withAuthRedirect";
+// import withAuthRedirect from "../../hoc/withAuthRedirect";
 import { compose } from "redux";
 
 export function withRouter(Children) {
@@ -40,6 +40,6 @@ const mapStateToProps = (state) => ({
 
 export default compose(
     connect(mapStateToProps, { profileThunk }),
-    withRouter,
-    withAuthRedirect
+    withRouter
+    // withAuthRedirect
 )(ProfileContainer);

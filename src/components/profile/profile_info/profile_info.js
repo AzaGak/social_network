@@ -1,3 +1,4 @@
+import ProfileStatus from "./profileStatus/profile_status";
 import cls from "./profile_info.module.css"; // Подключение модулем, в cls лежит объект ключи которого соответвует классом в файле profile.module.css а значение сгенирированны автоматический react
 
 const avatarSrc =
@@ -52,6 +53,9 @@ const ProfileInfo = (props) => {
                                 {!props.profile
                                     ? "Нет информации"
                                     : props.profile.aboutMe}
+                            </li>
+                            <li>
+                                <ProfileStatus status={"Hello my Friends!!!"} />
                             </li>
                         </ul>
                     </div>

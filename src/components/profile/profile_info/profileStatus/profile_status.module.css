@@ -1,0 +1,13 @@
+.status_input {
+    font-size: 20px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgb(120, 177, 120);
+    box-shadow: 2px 2px 5px rgba(2, 71, 23, 0.5);
+    padding: 5px;
+    transition: all 2s;
+}
+
+.status_wrapper {
+    margin-top: 10px;
+}
