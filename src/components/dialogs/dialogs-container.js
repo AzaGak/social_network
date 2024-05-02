@@ -6,6 +6,7 @@ import {
 import Dialogs from "./dialogs";
 // import StoreContext from "../../storeContext";
 import { connect } from "react-redux";
+import { compose } from "redux";
 
 // const DialogsContainer = (props) => {
 //     // const state = props.store.getState().messagePage;
@@ -61,11 +62,11 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-const AuthRedirectContainer = withAuthRedirect(Dialogs);
+// const AuthRedirectContainer = withAuthRedirect(Dialogs);
 
-const DialogsContainer = connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(AuthRedirectContainer);
+const DialogsContainer = compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withAuthRedirect
+)(Dialogs);
 
 export default DialogsContainer;
