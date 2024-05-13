@@ -15,11 +15,10 @@ const userAPI = {
             .then((responce) => responce.data);
     },
 
-    getProfile(userId) {
-        return instance
-            .get(`profile/${userId}`)
-            .then((responce) => responce.data);
-    },
+    // getProfile(userId) {
+    //     console.warn("Obsolote method: Please use profileAPI object");
+    //     return profileAPI.getProfile(userId);
+    // },
 
     setUnfollow(id) {
         return instance
@@ -32,10 +31,26 @@ const userAPI = {
     },
 };
 
+const profileAPI = {
+    getProfile(userId) {
+        return instance
+            .get(`profile/${userId}`)
+            .then((responce) => responce.data);
+    },
+    getStatus(userId) {
+        return instance
+            .get(`profile/status/${userId}`)
+            .then((responce) => responce.data);
+    },
+    updateStatus(status) {
+        return instance.put(`profile/status`, { status: status });
+    },
+};
+
 const authAPI = {
     getMe() {
         return instance.get(`auth/me`).then((responce) => responce.data);
     },
 };
 
-export { userAPI, authAPI };
+export { userAPI, authAPI, profileAPI };

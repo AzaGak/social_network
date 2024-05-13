@@ -5,7 +5,6 @@ const avatarSrc =
     "https://cc-prod.scene7.com/is/image/CCProdAuthor/adobe-firefly-marquee-text-to-image-0-desktop-1000x1000?$pjpeg$&jpegSize=300&wid=1000";
 
 const ProfileInfo = (props) => {
-    console.log(props);
     return (
         <div>
             <div className={cls.profile_background}>
@@ -55,7 +54,10 @@ const ProfileInfo = (props) => {
                                     : props.profile.aboutMe}
                             </li>
                             <li>
-                                <ProfileStatus status={"Hello my Friends!!!"} />
+                                <ProfileStatus
+                                    status={props.status}
+                                    updateStatus={props.updateStatus}
+                                />
                             </li>
                         </ul>
                     </div>

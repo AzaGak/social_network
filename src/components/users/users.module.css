@@ -33,6 +33,7 @@ button:active {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }
 
 /* .user_wrapper_items {
