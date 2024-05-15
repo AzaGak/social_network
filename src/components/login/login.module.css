@@ -1,0 +1,11 @@
+.login_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_wrapper h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
