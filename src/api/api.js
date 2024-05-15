@@ -51,6 +51,9 @@ const authAPI = {
     getMe() {
         return instance.get(`auth/me`).then((responce) => responce.data);
     },
+    login() {
+        return instance.post("auth/login").then((responce) => responce.data);
+    },
 };
 
 export { userAPI, authAPI, profileAPI };

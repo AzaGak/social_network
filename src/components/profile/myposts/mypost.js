@@ -1,6 +1,8 @@
 import React from "react";
 import cls from "./mypost.module.css";
 import Post from "./posts/post";
+// import MyPostForm from "./myPostForm/my_post_form";
+import MyPostReduxForm from "./myPostForm/my_post_form";
 // import {
 //     addPostActionCreator,
 //     updateNewPostTextActionCreator,
@@ -30,11 +32,21 @@ const MyPosts = (props) => {
         // props.dispatch(updateNewPostTextActionCreator(text));
     };
 
+    const onSubmit = (myPostData) => {
+        console.log(myPostData);
+    };
+
     return (
         <div className={cls.my_post}>
             <h2>My post</h2>
+            <MyPostReduxForm
+                onSubmit={onSubmit}
+                newPostText={newPostText}
+                onPostChange={onPostChange}
+                onAddPost={onAddPost}
+            />
 
-            <div className={cls.new_post}>
+            {/* <div className={cls.new_post}>
                 <textarea
                     name=""
                     id=""
@@ -44,7 +56,7 @@ const MyPosts = (props) => {
                     onChange={onPostChange}
                 />
                 <button onClick={onAddPost}>Add post</button>
-            </div>
+            </div> */}
             <div className={cls.posts}>{newArrayPostData}</div>
         </div>
     );
