@@ -29,7 +29,6 @@ const Dialogs = (props) => {
     };
 
     const onMessageChange = (event) => {
-        debugger;
         // const text = newMessageElement.current.value;
         props.onMessageChange(event.target.value);
         // let action = { type: "UPDATE-NEW-MESSAGE-TEXT", newText: text }; // Сначала создаеи объект потом передаем его
