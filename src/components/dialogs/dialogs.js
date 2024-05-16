@@ -2,6 +2,7 @@ import React from "react";
 import DialogItem from "./dialogItem/dialogItem";
 import MessageItem from "./messageItem/messageItem";
 import cls from "./dialogs.module.css";
+import DialogsReduxForm from "./dialogsForm/dialogs_form";
 
 // import {
 //     addMessageActionCreator,
@@ -28,6 +29,7 @@ const Dialogs = (props) => {
     };
 
     const onMessageChange = (event) => {
+        debugger;
         // const text = newMessageElement.current.value;
         props.onMessageChange(event.target.value);
         // let action = { type: "UPDATE-NEW-MESSAGE-TEXT", newText: text }; // Сначала создаеи объект потом передаем его
@@ -36,13 +38,23 @@ const Dialogs = (props) => {
 
     // if (!props.isAuth) return <Navigate to={"/login"} />;
 
+    const onSubmit = (dialogsFormData) => {
+        console.log(dialogsFormData);
+    };
+
     return (
         <div className={cls.dialogs}>
             <div className={cls.dialogs_items}>{newArrayDialogs}</div>
 
             <div className={cls.messages}>
                 {newArrayMessages}
-                <div className={cls.new_message}>
+                <DialogsReduxForm
+                    onSubmit={onSubmit}
+                    newMessageText={newMessageText}
+                    onMessageChange={onMessageChange}
+                    onAddMessage={onAddMessage}
+                />
+                {/* <div className={cls.new_message}>
                     <textarea
                         name=""
                         id=""
@@ -53,7 +65,7 @@ const Dialogs = (props) => {
                         onChange={onMessageChange}
                     ></textarea>
                     <button onClick={onAddMessage}>Add message</button>
-                </div>
+                </div> */}
             </div>
         </div>
     );

@@ -20,5 +20,4 @@ const MyPostForm = (props) => {
 
 const MyPostReduxForm = reduxForm({ form: "mypost" })(MyPostForm);
 
-// export default MyPostForm;
 export default MyPostReduxForm;
