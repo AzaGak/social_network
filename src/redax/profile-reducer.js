@@ -20,10 +20,10 @@ const profileReducer = (state = initialState, action) => {
     // let stateCopy = { ...state, postData: [...state.postData] };
     switch (action.type) {
         case ADD_POST:
-            const { newPostText } = state;
+            // const { newPostText } = state;
             const newPost = {
                 id: 4, //(postData[postData.length - 1].id += 1), // Добавляем + 1 к последнему id в массиве
-                message: newPostText,
+                message: action.newPostText,
                 likesCount: 0,
             };
             // postData.push(newPost);
@@ -48,8 +48,8 @@ const profileReducer = (state = initialState, action) => {
     }
 };
 
-const addPostActionCreator = () => {
-    const action = { type: ADD_POST };
+const addPostActionCreator = (newPostText) => {
+    const action = { type: ADD_POST, newPostText };
     return action;
 };
 

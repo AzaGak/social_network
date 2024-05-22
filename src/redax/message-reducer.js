@@ -7,7 +7,6 @@ const initialState = {
         { id: 2, message: "Hi, how are you" },
         { id: 3, message: "Hi, how old are you" },
     ],
-    newMessageText: "it-kamasutra.com1",
     dialogsData: [
         { id: 1, name: "Dimych" },
         { id: 2, name: "Andrey" },
@@ -20,37 +19,27 @@ const initialState = {
 const messageReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_MESSAGE:
-            const { messagesData, newMessageText } = state;
+            const { messagesData } = state;
             const newMessage = {
                 id: 7, //(messagesData[messagesData.length - 1].id += 1), // Добавляем + 1 к последнему id в массиве
-                message: newMessageText,
+                // message: newMessageText,
+                message: action.newMessageText,
             };
             return {
                 ...state,
-                newMessageText: "",
                 messagesData: [...messagesData, newMessage],
             };
-        // stateCopy.messagesData.push(newMessage);
-        // messagesData.push(newMessage);
-        // state.newMessageText = "";
-        // stateCopy.newMessageText = "";
-        // return state;
 
         case UPDATE_NEW_MESSAGE_TEXT:
-            // state.newMessageText = action.newText;
-            // let stateCopy = { ...state };
-            // stateCopy.newMessageText = action.newText;
-            // return state;
             return { ...state, newMessageText: action.newText };
-        // stateCopy.newMessageText = action.newText;
 
         default:
             return state;
     }
 };
 
-const addMessageActionCreator = () => {
-    const action = { type: ADD_MESSAGE };
+const addMessageActionCreator = (newMessageText) => {
+    const action = { type: ADD_MESSAGE, newMessageText };
     return action;
 };
 

@@ -10,7 +10,7 @@ import DialogsReduxForm from "./dialogsForm/dialogs_form";
 // } from "../../redax/message-reducer";
 
 const Dialogs = (props) => {
-    const { dialogsData, messagesData, newMessageText } = props.messagePage; // дастаю из пропса dialogsData и messageData
+    const { dialogsData, messagesData } = props.messagePage; // дастаю из пропса dialogsData и messageData
 
     const newArrayDialogs = dialogsData.map((name) => (
         <DialogItem name={name.name} id={name.id} key={name.id} />
@@ -22,23 +22,8 @@ const Dialogs = (props) => {
 
     // const newMessageElement = React.createRef();
 
-    const onAddMessage = () => {
-        props.addMessage();
-        // props.dispatch({ type: "ADD-MESSAGE" }); // Сразу передаем объект
-        // props.dispatch(addMessageActionCreator());
-    };
-
-    const onMessageChange = (event) => {
-        // const text = newMessageElement.current.value;
-        props.onMessageChange(event.target.value);
-        // let action = { type: "UPDATE-NEW-MESSAGE-TEXT", newText: text }; // Сначала создаеи объект потом передаем его
-        // props.dispatch(onMessageChangeActionCreator(text));
-    };
-
-    // if (!props.isAuth) return <Navigate to={"/login"} />;
-
-    const onSubmit = (dialogsFormData) => {
-        console.log(dialogsFormData);
+    const onAddMessage = (values) => {
+        props.addMessage(values.newMessageText);
     };
 
     return (
@@ -47,24 +32,7 @@ const Dialogs = (props) => {
 
             <div className={cls.messages}>
                 {newArrayMessages}
-                <DialogsReduxForm
-                    onSubmit={onSubmit}
-                    newMessageText={newMessageText}
-                    onMessageChange={onMessageChange}
-                    onAddMessage={onAddMessage}
-                />
-                {/* <div className={cls.new_message}>
-                    <textarea
-                        name=""
-                        id=""
-                        rows="5"
-                        // ref={newMessageElement}
-                        value={newMessageText}
-                        placeholder="Enter your message"
-                        onChange={onMessageChange}
-                    ></textarea>
-                    <button onClick={onAddMessage}>Add message</button>
-                </div> */}
+                <DialogsReduxForm onSubmit={onAddMessage} />
             </div>
         </div>
     );

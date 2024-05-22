@@ -6,14 +6,12 @@ const DialogsForm = (props) => {
             <div className={cls.new_message}>
                 <Field
                     component={"textarea"}
-                    name={"dialogs"}
+                    name={"newMessageText"}
                     id=""
                     rows="5"
-                    value={props.newMessageText}
                     placeholder={"Enter your message"}
-                    onChange={props.onMessageChange}
                 />
-                <button onClick={props.onAddMessage}>Add message</button>
+                <button>Add message</button>
             </div>
         </form>
     );

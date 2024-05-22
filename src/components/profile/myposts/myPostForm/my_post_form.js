@@ -6,13 +6,11 @@ const MyPostForm = (props) => {
             <div className={cls.new_post}>
                 <Field
                     component={"textarea"}
-                    name={"mypost"}
+                    name={"newPostText"}
                     id=""
                     rows="5"
-                    value={props.newPostText}
-                    onChange={props.onPostChange}
                 />
-                <button onClick={props.onAddPost}>Add post</button>
+                <button>Add post</button>
             </div>
         </form>
     );
